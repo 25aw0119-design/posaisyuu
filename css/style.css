@@ -1,0 +1,1167 @@
+@charset "utf-8";
+
+/* リセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fffefa;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+  font-size: 62.5%;
+  color: black;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.logo img {
+  width: clamp(120px, 20vw, 200px);
+}
+
+.btn {
+  display: inline-flex;
+  width: 100px;
+  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #7b2525;
+  border-radius: 50%;
+  gap: 10px;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.btn a {
+  color: #7b2525;
+  font-family: "Abhaya Libre";
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0 auto;
+}
+
+.hamburger {
+  display: none;
+}
+
+.nav-inner {
+  display: flex;
+  list-style-type: none;
+  gap: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.nav-inner li {
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.nav-inner li a {
+  text-decoration: none;
+  color: #7b2525;
+  position: relative;
+}
+
+.nav-inner span {
+  background: #fff5d1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.nav-inner a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #a10505;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+  transform-origin: left;
+}
+
+.nav-inner a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-inner img {
+  display: none;
+}
+
+.top-btn {
+  padding: 0 30px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.home-page .hero {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/heroguradyu.png);
+  background-repeat: no-repeat;
+  background-size: 50% 90%;
+}
+
+.hero-title {
+  writing-mode: vertical-rl;
+  /* 纵书 */
+  text-orientation: mixed;
+  /* 英文/符号自然方向 */
+}
+
+h1 {
+  color: #000;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 500;
+  letter-spacing: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.accent {
+  color: #d90c0f;
+  font-family: "RocknRoll One";
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.left {
+  margin-top: 6rem;
+}
+
+.icon-container {
+  min-height: 200px;
+  margin-left: auto;
+  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  position: relative;
+}
+
+.ring {
+  max-width: 100px;
+  min-height: 100px;
+  animation: rotateRing 4s linear infinite;
+  position: absolute;
+}
+
+@keyframes rotateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.bottom {
+  top: 60px;
+  width: 10px;
+  height: 10px;
+}
+
+.top {
+  top: 90px;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-letter {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  /* 英文/符号自然方向 */
+}
+
+.letter {
+  color: #000;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+.letter::after {
+  content: "";
+  width: 1px;
+  height: 189px;
+  position: absolute;
+  left: 50%;
+  transition: transform 0.4s ease;
+  background: linear-gradient(to bottom, transparent, #000, transparent);
+  transform-origin: top;
+  opacity: 0;
+  animation: meteor 2s ease-in-out infinite;
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(-50%) scaleY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0;
+  }
+}
+
+.lead {
+  max-width: 450px;
+  margin: 0 auto clamp(20px, 8vw, 100px);
+}
+
+.lead-item {
+  display: grid;
+  gap: 50px;
+  justify-items: start;
+}
+
+.text {
+  color: #000;
+  text-align: left;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+  letter-spacing: 0.15em;
+  line-height: 2.8;
+}
+
+.red {
+  color: #d90c0f;
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 500;
+}
+
+.btn-arrow {
+  max-width: clamp(30px, 2vw, 45px);
+  display: block;
+  transform: translateX(0);
+  transition: transform 0.4s ease;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+  background-color: rgb(251, 255, 20);
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(20px);
+}
+
+.section {
+  max-width: 1200px;
+  padding: 100px 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #7b2525;
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  letter-spacing: 7.2px;
+}
+
+.subtitle {
+  color: #6d6d6d;
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: clamp(14px, 2vw, 14px);
+  letter-spacing: 3.2px;
+  margin-top: 10px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 标题本体：让标题和“线”在一行里 */
+.title-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 默认：线隐藏（透明 + 缩成 0） */
+.title-line::after {
+  content: "";
+  flex: 1;
+  /* 占满标题右侧剩余空间 */
+  border-top: 2px solid #8b2b2b;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 1.2s cubic-bezier(0, 0, 1, 1);
+}
+
+/* 滚动时加上这个类，让线出现 */
+.title-line.is-show::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: left;
+  margin-left: 10px;
+}
+
+.work-item {
+  margin: 120px auto 0;
+}
+
+.list-item {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  gap: 100px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.item.reverse {
+  flex-direction: row-reverse;
+}
+
+.list-image {
+  max-width: 500px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.work-image {
+  max-width: 100%;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.item:hover .work-image {
+  transform: scale(1.1);
+}
+
+.list {
+  width: 100%;
+  max-width: 480px;
+  display: grid;
+  gap: 10px;
+}
+
+.list .tag {
+  color: #a23535;
+  font-family: "Abhaya Libre";
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 400;
+  letter-spacing: 2.8px;
+}
+
+h3 {
+  color: #000;
+  font-family: "Abhaya Libre Medium";
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+.description {
+  width: 80%;
+  color: #000;
+  font-family: "Abhaya Libre";
+  font-size: clamp(12px, 2vw, 14px);
+  letter-spacing: 1.82px;
+}
+
+.tools {
+  color: #ba9090;
+  font-family: "Abhaya Libre";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.item-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 200px;
+  border: 1px solid #2fa1a1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.item-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #fff200;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.item-btn:hover::before {
+  background-color: #fff200;
+  transform: scaleX(1);
+}
+
+.item-btn a {
+  color: #2fa1a1;
+  font-family: "Abhaya Libre";
+  font-size: clamp(12px, 2vw, 14px);
+  text-decoration: none;
+}
+
+.bluebtn {
+  max-width: 21px;
+  min-height: 20px;
+  transition: transform 0.6s ease-out;
+}
+
+.item-btn:hover .bluebtn {
+  transform: translateX(80px) scaleX(3);
+}
+
+.curve-title {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.curve-text {
+  font-size: 20px;
+  letter-spacing: 2px;
+  fill: #642222be;
+  text-shadow: 3px 3px 3px rgba(173, 173, 173, 0.3);
+}
+
+.footer {
+  min-height: 40vh;
+  background-image: url(../img/footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.footer-nav {
+  text-align: center;
+  font-family: "Abhaya Libre SemiBold";
+  text-align: left;
+  width: 30%;
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-nav li {
+  list-style-type: none;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #7b2525;
+  position: relative;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 400;
+  letter-spacing: 1.4px;
+}
+
+.footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #a10505;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+  transform-origin: left;
+}
+
+.footer-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.social-text p {
+  color: transparent;
+  -webkit-text-stroke-width: clamp(2px, 0.5vw, 8px);
+  -webkit-text-stroke-color: rgba(123, 37, 37, 0.08);
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: clamp(40px, 10vw, 100px);
+  /* 🔥 自适应 */
+  font-weight: 800;
+  letter-spacing: clamp(4px, 2vw, 18px);
+  /* 🔥 自适应 */
+  opacity: 0.3;
+}
+
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact a {
+  color: #7b2525;
+  font-style: none;
+  font-family: "Abhaya Libre Medium";
+  font-style: normal;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 400;
+  letter-spacing: 4.8px;
+  text-decoration: none;
+  position: relative;
+  border: 1px solid #7b2525;
+  border-radius: 200px;
+  padding: clamp(5px, 2vw, 10px);
+  transition: background-color 0.4s ease;
+  transform-origin: left;
+}
+
+.contact a:hover {
+  background-color: #fff200;
+}
+
+/* aboutページ */
+.about-page .hero {
+  max-width: 1000px;
+  background-image: url(../img/tagu.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 50%;
+  margin-top: clamp(30px, 5vw, 100px);
+}
+
+.hero img {
+  max-width: 80%;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff6d8;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+ 
+}
+
+.profile-title {
+  color: #9a5226;
+  text-align: center;
+  font-family: "Allura", cursive;
+  font-size: clamp(40px, 5vw, 60px);
+}
+
+.name {
+  text-align: center;
+  color: #000;
+  font-family: "Abhaya Libre Medium";
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 400;
+  letter-spacing: 14.08px;
+  margin-top: 20px;
+}
+
+.subname {
+  color: #000;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 400;
+  letter-spacing: 2.88px;
+}
+
+.profile-wrapper {
+  margin: 20px auto 0;
+}
+
+.profile-content {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px;
+
+}
+
+.profile-text {
+font-size: clamp(14px,2vw,16px);
+}
+
+
+
+.about-page .section {
+  position: relative;
+  padding: 100px 10px;
+  max-width: 1200px;
+}
+
+.about-page .section::after {
+  content: "";
+  width: 1px;
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  transition: transform 0.4s ease;
+  background: linear-gradient(to bottom, transparent, #a10505, transparent);
+  transform-origin: top;
+  opacity: 0;
+  animation: meteor 2s ease-in-out infinite;
+}
+
+@keyframes meteor {
+  0% {
+    transform: translateX(-50%) scaleY(0);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) scaleY(1);
+    opacity: 0;
+  }
+}
+
+.strong-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.strong {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding: 10em 0 5em;
+}
+
+.strong-item {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+  letter-spacing: 1.6px;
+  border-bottom: 1px dashed #da773a;
+  padding-bottom: 30px;
+}
+
+.strong-title {
+  flex: 0.5;
+  color: #a10505;
+  font-family: "Abhaya Libre Medium";
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 400;
+}
+
+.strong-item p {
+  flex: 0.5;
+}
+
+.skill-container {
+  background: #fff6ee;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.skill-title {
+  color: #a10505;
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  border: 1px dashed #626262;
+  border-color: #a10505;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-wrapper {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  gap: 100px;
+}
+
+.skill-content {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  position: relative;
+}
+
+.skill-content::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 300px;
+  left: -15px;
+  transform: translateY(10px);
+  background: #985151;
+  border-radius: 10px;
+}
+
+.skill-content:nth-child(2) {
+  margin-top: 180px;
+}
+
+.skill-item {
+  color: #000000;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 400;
+}
+
+h4 {
+  color: #7b2525;
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 500;
+  letter-spacing: 4.8px;
+}
+
+/* works page */
+.works-page .section {
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.works-page .work-item {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.works-page .list-item {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  gap: 60px;
+}
+
+.works-page .item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 0;
+}
+
+/* detail page */
+.detail-hero {
+  padding: 60px 0;
+  max-width: 1000px;
+  position: relative;
+  margin-bottom: 30px;
+  margin-left: auto;
+}
+
+.detail-hero img {
+  max-width: 100%;
+}
+
+.detail-hero-title {
+  position: absolute;
+  text-align: center;
+  display: grid;
+  gap: 10px;
+  left: -10%;
+  bottom: 15%;
+  background-color: #fffefa;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.detail-hero-title h1 {
+  color: #7b2525;
+  font-size: clamp(36px,2vw,38px);
+  font-family: "Abhaya Libre Medium";
+}
+
+.detail-hero-title p {
+  color: #ba9090;
+  font-family: "Abhaya Libre";
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.detail-text-container {
+  max-width: 100%;
+  padding: 60px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: #fff5da;
+  box-sizing: border-box;
+}
+
+.detail-text-wrapper {
+  max-width: 800px;
+  display: grid;
+  gap: 60px;
+  padding: 0 10px;
+  margin: 0 auto;
+
+}
+
+.detail-text-item {
+  color: #000;
+  font-family: "Abhaya Libre";
+ 
+  font-weight: 400;
+  letter-spacing: 1.44px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: start;
+  border-bottom: 1px dashed #000;
+  padding-bottom: 10px;
+}
+
+.detail-text-title {
+  color: #7b2525;
+  font-weight: 500px;
+  font-size: clamp(16px, 2vw, 18px);
+}
+.detail-text {
+ font-size: clamp(14px, 2vw, 16px);
+}
+.demo-container {
+  padding: 100px 0;
+}
+
+.demo-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 50px;
+}
+
+.demo-list {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+}
+
+.phone {
+  max-width: 390px;
+  height: 700px;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.screen img {
+  max-width: 100%;
+  display: block;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  gap: 20px;
+}
+
+.site img {
+  width: 100%;
+  border: 1px solid #7b2525;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .detail-hero {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .detail-hero-title {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .btn {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nav-inner img {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #7b2525;
+    margin: 6px 0;
+    transition: 0.3s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .nav-inner {
+    width: 100%;
+    height: 50%;
+    right: 0px;
+    position: absolute;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 0.3s;
+    background: #fffae4;
+  }
+
+  .nav-inner a {
+    border-bottom: 1px solid #c29d9d;
+  }
+
+  .nav-inner.active {
+    z-index: 999;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .top-btn {
+    display: none;
+  }
+
+  .icon-container {
+    margin: 50px auto 50px;
+    height: 100px;
+  }
+
+  .letter::after {
+    height: 100px;
+  }
+
+  .lead-item {
+    justify-items: center;
+  }
+
+  .text {
+    color: #000;
+    text-align: center;
+  }
+
+  .section {
+    margin: 0 auto;
+  }
+
+  .work-item {
+    margin-top: 80px;
+    gap: 50px;
+  }
+
+  .item {
+    flex-direction: column;
+    gap: 30px;
+    align-items: first baseline;
+  }
+
+  .item.reverse {
+    flex-direction: column;
+  }
+
+  /* works-page */
+  .works-page .list-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* about page */
+  .profile-item {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .strong-item {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .strong-title {
+    background: #7b2525;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 5px;
+  }
+
+  .skill-wrapper {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    width: 90%;
+  }
+
+  .skill-item {
+    border-bottom: 1px dashed #7b2525;
+    padding-bottom: 3px;
+  }
+
+  .skill-content::before {
+    display: none;
+  }
+
+  .skill-content:nth-child(2) {
+    margin-top: 0;
+  }
+
+  .demo-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-hero {
+    flex-direction: column-reverse;
+  }
+
+  .detail-text-container {
+    width: 100%;
+
+  }
+
+  .detail-text-wrapper {
+      max-width: 500px;
+    padding: 0 10px;
+  }
+
+  .detail-text-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 10px;
+    border-bottom: 1px dashed #000;
+  }
+
+  .detail-hero {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+
+  }
+
+  .detail-hero-title {
+    padding: 20px 0;
+    position: static;
+  }
+
+  .site {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    min-height: 20vh;
+    /* 🔥 降低高度 */
+    background-size: contain;
+    /* 🔥 不裁切 */
+    background-position: center;
+    /* 🔥 居中 */
+  }
+
+  .footer-nav {
+    width: 80%;
+  }
+
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
