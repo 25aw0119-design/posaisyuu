@@ -466,19 +466,7 @@ h3 {
   transform: translateX(80px) scaleX(3);
 }
 
-.curve-title {
-  width: 100%;
-  max-width: 1200px;
-  display: block;
-  margin: 0 auto;
-}
 
-.curve-text {
-  font-size: 20px;
-  letter-spacing: 2px;
-  fill: #642222be;
-  text-shadow: 3px 3px 3px rgba(173, 173, 173, 0.3);
-}
 
 .footer {
   min-height: 40vh;
