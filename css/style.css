@@ -580,7 +580,7 @@ h3 {
   margin: 0 auto;
   background: #fff6d8;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
- 
+
 }
 
 .profile-title {
@@ -624,7 +624,7 @@ h3 {
 }
 
 .profile-text {
-font-size: clamp(14px,2vw,16px);
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 
@@ -780,7 +780,8 @@ h4 {
 .works-page .section {
   padding: 0;
   max-width: 1000px;
-  margin: 0 auto 180px;
+  margin: 0 auto 150px;
+
 }
 
 .works-page .work-item {
@@ -792,7 +793,7 @@ h4 {
 .works-page .list-item {
   display: flex;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
   justify-content: center;
   gap: 60px;
 }
@@ -832,7 +833,7 @@ h4 {
 
 .detail-hero-title h1 {
   color: #7b2525;
-  font-size: clamp(36px,2vw,38px);
+  font-size: clamp(36px, 2vw, 38px);
   font-family: "Abhaya Libre Medium";
 }
 
@@ -863,7 +864,7 @@ h4 {
 .detail-text-item {
   color: #000;
   font-family: "Abhaya Libre";
- 
+
   font-weight: 400;
   letter-spacing: 1.44px;
   display: grid;
@@ -878,9 +879,11 @@ h4 {
   font-weight: 500px;
   font-size: clamp(16px, 2vw, 18px);
 }
+
 .detail-text {
- font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(14px, 2vw, 16px);
 }
+
 .demo-container {
   padding: 100px 0;
 }
@@ -946,6 +949,9 @@ h4 {
   .btn {
     width: 80px;
     height: 80px;
+  }
+  .item-btn {
+  width: 100%;
   }
 
   .nav-inner img {
@@ -1107,7 +1113,7 @@ h4 {
   }
 
   .detail-text-wrapper {
-      max-width: 500px;
+    max-width: 500px;
     padding: 0 10px;
   }
 
