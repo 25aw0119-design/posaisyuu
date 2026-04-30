@@ -779,8 +779,8 @@ h4 {
 /* works page */
 .works-page .section {
   padding: 0;
-  max-width: 1200px;
-  margin: 0 auto 150px;
+  max-width: 1000px;
+  margin: 0 auto 180px;
 }
 
 .works-page .work-item {
